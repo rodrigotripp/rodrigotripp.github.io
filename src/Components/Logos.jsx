@@ -22,7 +22,7 @@ function Logos() {
     },
     {
       img: instagram,
-      href:'https://facebook.com/rodrigotripp'
+      href:'https://instagram.com/rdrgtrpp'
     },
     {
       img: linkedin,

@@ -2,7 +2,7 @@
   "name": "site2020",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rodrigotripp.github.io/site2020",
+  "homepage": "https://rodrigotripp.github.io/rodrigotripp.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

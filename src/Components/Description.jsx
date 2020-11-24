@@ -2,9 +2,14 @@ import  React from 'react';
 
 function Description() {
   return(
-    <p>
-      Mexican, living in Helsinki. Web developer with a strong UX and UI development experience, self-disciplined and the ability to work with the minimal supervision. Devoted to web development and aiming to become a better developer by keeping up with the latest technologies.
-    </p>
+    <div className="description">
+      <p>
+      Mexican, living in Helsinki.
+      Full stack developer with a strong UX and UI development experience.
+      </p><p>Road cycling, music and bouldering keep me busy.</p>
+      <p>Working for <a href="https://marimekko.com"target="_blank" rel="noopener noreferrer">marimekko</a></p>
+    </div>
+    
   );
 }
 

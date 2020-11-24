@@ -1,35 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital@1&display=swap');
 .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
-  box-shadow: 10px 10px 44px -1px rgba(67,62,73,0.45);
+  min-height: 250px;
+  border-radius: 25%;
+  transition: all 0.5s;
+  &:hover{
+    box-shadow: 10px 10px 44px -1px rgba(67,62,73,0.45);
+  }
 }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
 
 .icon{
   height: 10vmin;
+  margin: 5px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  &:hover{
+    box-shadow: 10px 10px 44px -1px rgba(67,62,73,0.45);
+  }
 }
 
 .App-header {
-  background-color: #877c93;
+  background-color: #f9f9f9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:  rgba(67,62,73,0.75);
   p {
     max-width: 800px;
     text-align: center;
+  }
+}
+
+.description{
+  a{
+    font-family: 'Gentium Book Basic', serif;
+    color: black;
+    
   }
 }
 
@@ -43,7 +56,6 @@
   justify-content: space-between;
   justify-content: center;
   width: 100%;
-
 }
 
 @keyframes App-logo-spin {

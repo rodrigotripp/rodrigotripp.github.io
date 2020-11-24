@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/rodrigotripp.github.io/static/css/main.7d97cfd2.chunk.css",
+    "main.js": "/rodrigotripp.github.io/static/js/main.1b7b81b7.chunk.js",
+    "main.js.map": "/rodrigotripp.github.io/static/js/main.1b7b81b7.chunk.js.map",
+    "runtime-main.js": "/rodrigotripp.github.io/static/js/runtime-main.8cd85af4.js",
+    "runtime-main.js.map": "/rodrigotripp.github.io/static/js/runtime-main.8cd85af4.js.map",
+    "static/js/2.cde4a0e8.chunk.js": "/rodrigotripp.github.io/static/js/2.cde4a0e8.chunk.js",
+    "static/js/2.cde4a0e8.chunk.js.map": "/rodrigotripp.github.io/static/js/2.cde4a0e8.chunk.js.map",
+    "index.html": "/rodrigotripp.github.io/index.html",
+    "precache-manifest.02d19c849bf4458b61dd9a937b122ffc.js": "/rodrigotripp.github.io/precache-manifest.02d19c849bf4458b61dd9a937b122ffc.js",
+    "service-worker.js": "/rodrigotripp.github.io/service-worker.js",
+    "static/css/main.7d97cfd2.chunk.css.map": "/rodrigotripp.github.io/static/css/main.7d97cfd2.chunk.css.map",
+    "static/js/2.cde4a0e8.chunk.js.LICENSE.txt": "/rodrigotripp.github.io/static/js/2.cde4a0e8.chunk.js.LICENSE.txt",
+    "static/media/facebook.svg": "/rodrigotripp.github.io/static/media/facebook.f4c2b29b.svg",
+    "static/media/instagram.svg": "/rodrigotripp.github.io/static/media/instagram.f8af51e6.svg",
+    "static/media/linkedin.svg": "/rodrigotripp.github.io/static/media/linkedin.0b000652.svg",
+    "static/media/sepia.jpg": "/rodrigotripp.github.io/static/media/sepia.92861d98.jpg",
+    "static/media/soundcloud.svg": "/rodrigotripp.github.io/static/media/soundcloud.82b86582.svg",
+    "static/media/youtube.svg": "/rodrigotripp.github.io/static/media/youtube.f366e223.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8cd85af4.js",
+    "static/js/2.cde4a0e8.chunk.js",
+    "static/css/main.7d97cfd2.chunk.css",
+    "static/js/main.1b7b81b7.chunk.js"
+  ]
+}

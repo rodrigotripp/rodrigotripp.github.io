@@ -1,4 +1,4 @@
-import  React from 'react';
+import  React, { useState } from 'react';
 
 import youtube from '../img/youtube.svg';
 import soundcloud from '../img/soundcloud.svg';
@@ -7,6 +7,14 @@ import instagram from '../img/instagram.svg';
 import linkedin from '../img/linkedin.svg';
 
 function Logos() {
+  const [clicked, setClickStatus] = useState(false);
+
+
+  function handleClick(e) {
+    e.preventDefault();
+    setClickStatus(!clicked)
+  }
+
   let icons = [
     {
       img: youtube,
@@ -40,13 +48,20 @@ function Logos() {
         key={`${index}-props`}
       >
         <img src={icon.img} className="icon" alt="rodrigo-tripp " />
-      </a>  
+      </a> 
       );
     }
   );
-  return (<div className="logos-container">{Icons}</div>)
-
-
+  return (
+    <div className={ clicked ? 'logos-wrapper changed': 'logos-wrapper'}  >
+      <div className="logos-container">
+        {Icons}
+      </div>
+      <div className="btn icon" onClick={handleClick}>
+        +
+      </div>
+    </div>
+    )
 }
 
 export default Logos;

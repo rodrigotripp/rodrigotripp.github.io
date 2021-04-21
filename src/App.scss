@@ -47,29 +47,44 @@
   }
 }
 
-.App-link {
-  color: #e7cb82;
+.logos-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logos-container{
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  border-radius: 50%;
+  transform: scale(0) rotate(-180deg);
+  transition: all .5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn{
+  background-color: cornflowerblue;
+  color: #f9f9f9;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+  position: absolute;
+  width: 10vmin;
+  min-width: 50px;
+  min-height: 50px;
+  font-size: xx-large;
 }
 
-// #877c93	(135,124,147)
-// #ae838e	(174,131,142)
-// #c98d95	(201,141,149)
-// #ddcdc0	(221,205,192)
-// #e7cb82	(231,203,130)
+
+.changed {
+  .logos-container{
+    transform: scale(1) rotate(0);
+  }
+  .btn{
+    display: none;
+  }
+}

@@ -9,7 +9,6 @@ function Description() {
       </p><p>Road cycling, music and bouldering keep me busy.</p>
       <p>Working for <a href="https://marimekko.com"target="_blank" rel="noopener noreferrer">marimekko</a></p>
     </div>
-    
   );
 }
 

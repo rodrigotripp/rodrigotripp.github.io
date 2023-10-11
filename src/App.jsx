@@ -1,5 +1,5 @@
 import React from 'react';
-import me from './img/sepia.jpg';
+import me from './img/me_marimekko.jpeg';
 import './App.scss';
 import Description from './Components/Description';
 import Name from './Components/Name';
@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <img src={me} 
-            className="App-logo" 
+          <img src={me}
+            className="App-logo"
             alt="rodrigo-tripp "/>
           </div>
         <Name></Name>

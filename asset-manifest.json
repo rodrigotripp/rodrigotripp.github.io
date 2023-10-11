@@ -1,26 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.4aec5cf7.chunk.css",
-    "main.js": "/static/js/main.59f32df8.chunk.js",
-    "main.js.map": "/static/js/main.59f32df8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6f1dd1da.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6f1dd1da.js.map",
-    "static/js/2.fcf21e54.chunk.js": "/static/js/2.fcf21e54.chunk.js",
-    "static/js/2.fcf21e54.chunk.js.map": "/static/js/2.fcf21e54.chunk.js.map",
+    "main.css": "/static/css/main.ac8b42b3.css",
+    "main.js": "/static/js/main.5dd2a373.js",
+    "static/media/me_marimekko.jpeg": "/static/media/me_marimekko.d50f93ead0698e2fe682.jpeg",
+    "static/media/soundcloud.svg": "/static/media/soundcloud.b0bb2cc3ff1fefef6d6f9369a6fc0969.svg",
+    "static/media/instagram.svg": "/static/media/instagram.04280b3638bcbd21a6cbfbca4fa93afb.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.47c4c934e49f6d2d05871737201ec562.svg",
+    "static/media/facebook.svg": "/static/media/facebook.34f4aceada534300f584c92864f0b26a.svg",
+    "static/media/youtube.svg": "/static/media/youtube.62269c5a996a3abd6cca5cca61337874.svg",
     "index.html": "/index.html",
-    "static/css/main.4aec5cf7.chunk.css.map": "/static/css/main.4aec5cf7.chunk.css.map",
-    "static/js/2.fcf21e54.chunk.js.LICENSE.txt": "/static/js/2.fcf21e54.chunk.js.LICENSE.txt",
-    "static/media/facebook.34f4acea.svg": "/static/media/facebook.34f4acea.svg",
-    "static/media/instagram.04280b36.svg": "/static/media/instagram.04280b36.svg",
-    "static/media/linkedin.47c4c934.svg": "/static/media/linkedin.47c4c934.svg",
-    "static/media/sepia.a3d4a2d5.jpg": "/static/media/sepia.a3d4a2d5.jpg",
-    "static/media/soundcloud.b0bb2cc3.svg": "/static/media/soundcloud.b0bb2cc3.svg",
-    "static/media/youtube.62269c5a.svg": "/static/media/youtube.62269c5a.svg"
+    "main.ac8b42b3.css.map": "/static/css/main.ac8b42b3.css.map",
+    "main.5dd2a373.js.map": "/static/js/main.5dd2a373.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f1dd1da.js",
-    "static/js/2.fcf21e54.chunk.js",
-    "static/css/main.4aec5cf7.chunk.css",
-    "static/js/main.59f32df8.chunk.js"
+    "static/css/main.ac8b42b3.css",
+    "static/js/main.5dd2a373.js"
   ]
 }

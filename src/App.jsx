@@ -1,5 +1,5 @@
 import React from 'react';
-import me from './img/me_marimekko.jpeg';
+import me from './img/sepia.jpg';
 import './App.scss';
 import Description from './Components/Description';
 import Name from './Components/Name';

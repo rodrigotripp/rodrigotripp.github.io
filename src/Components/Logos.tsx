@@ -1,4 +1,4 @@
-import  React, { useState } from 'react';
+import  React, { MouseEventHandler, useState } from 'react';
 
 import youtube from '../img/youtube.svg';
 import soundcloud from '../img/soundcloud.svg';
@@ -7,12 +7,11 @@ import instagram from '../img/instagram.svg';
 import linkedin from '../img/linkedin.svg';
 
 function Logos() {
-  const [clicked, setClickStatus] = useState(false);
+  const [clicked, setClickStatus] = useState<boolean>(false);
 
 
-  function handleClick(e) {
-    e.preventDefault();
-    setClickStatus(!clicked)
+  const handleClick:MouseEventHandler = () => {
+    setClickStatus(!clicked);
   }
 
   let icons = [
@@ -58,7 +57,7 @@ function Logos() {
         {Icons}
       </div>
       <div className="btn icon" onClick={handleClick}>
-        +
+        { !clicked ? '+' : '-'}
       </div>
     </div>
     )

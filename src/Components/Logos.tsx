@@ -48,6 +48,7 @@ function Logos() {
       >
         <img src={icon.img} className="icon" alt="rodrigo-tripp " />
       </a> 
+      
       );
     }
   );

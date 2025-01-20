@@ -1,26 +1,24 @@
 import React from 'react';
-import me from './img/sepia.jpg';
-import './App.scss';
-import Description from './Components/Description';
-import Name from './Components/Name';
-import Logos from './Components/Logos';
+
+import Description from './components/Description';
+import Name from './components/Name';
+// import Logos from './components/Logos';
+import './components/styles/App.scss';
 
 
-function App() {
+export default function Page() {
   return (
     <div className="App">
       <header className="App-header">
         <div>
-          <img src={me}
+          <img src={'./img/sepia.jpg'}
             className="App-logo"
             alt="rodrigo-tripp "/>
           </div>
         <Name></Name>
-        <Logos/>
+        {/* <Logos/> */}
         <Description></Description>
       </header>
     </div>
   );
 }
-
-export default App;

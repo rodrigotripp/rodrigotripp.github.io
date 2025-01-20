@@ -1,10 +1,7 @@
+'use client'
 import  React, { MouseEventHandler, useState } from 'react';
-
-import youtube from '../img/youtube.svg';
-import soundcloud from '../img/soundcloud.svg';
-import facebook from '../img/facebook.svg';
-import instagram from '../img/instagram.svg';
-import linkedin from '../img/linkedin.svg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 function Logos() {
   const [clicked, setClickStatus] = useState<boolean>(false);
@@ -14,40 +11,40 @@ function Logos() {
     setClickStatus(!clicked);
   }
 
-  let icons = [
+  const icons = [
     {
-      img: youtube,
+      img: './img/youtube.svg',
       href:'https://www.youtube.com/roytripp',
     },
     {
-      img: soundcloud,
+      img: './img/soundcloud.svg',
       href:'https://soundcloud.com/ronsumusic'
     },
     {
-      img: facebook,
+      img: './img/facebook.svg',
       href:'https://facebook.com/rodrigotripp'
     },
     {
-      img: instagram,
+      img: './img/instagram.svg',
       href:'https://instagram.com/rdrgtrpp'
     },
     {
-      img: linkedin,
+      img: './img/linkedin.svg',
       href: 'https://www.linkedin.com/in/rodrigotripp/',
     }
   ];
 
-  let Icons =  icons.map(
+  const Icons =  icons.map(
     (icon, index) => {
       return (
-      <a
+      <Link
         href={icon.href}
         target="_blank"
         rel="noopener noreferrer"
         key={`${index}-props`}
       >
-        <img src={icon.img} className="icon" alt="rodrigo-tripp " />
-      </a> 
+        <Image src={icon.img} width={'100'} className="icon" alt="rodrigo-tripp " />
+      </Link> 
       
       );
     }

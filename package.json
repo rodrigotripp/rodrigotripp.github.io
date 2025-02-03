@@ -32,15 +32,18 @@
     "@chakra-ui/react": "^3.1.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@tailwindcss/postcss": "^4.0.3",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "eslint": "^9.14.0",
     "eslint-config-next": "^15.0.3",
     "framer-motion": "^11.11.13",
     "next": "^15.0.3",
+    "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.80.7",
+    "tailwindcss": "^4.0.3",
     "typescript": "^5.6.3"
   },
   "devDependencies": {

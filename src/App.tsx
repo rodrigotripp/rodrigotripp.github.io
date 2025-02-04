@@ -11,9 +11,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <a href='https://www.linkedin.com/in/rodrigotripp/' target='_blank'>
           <img src={me}
             className="App-logo"
             alt="rodrigo-tripp "/>
+          </a>
           </div>
         <Name></Name>
         <Logos/>

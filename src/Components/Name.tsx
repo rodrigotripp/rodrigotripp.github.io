@@ -1,6 +1,6 @@
 function Name() {
   return (
-    <p className="text-sky-50 text-xl">
+    <p className="text-sky-100 text-xl">
       <strong>Rodrigo Tripp</strong>
     </p>
   );

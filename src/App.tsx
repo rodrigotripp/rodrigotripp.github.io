@@ -1,12 +1,12 @@
 import me from "./img/sepia.jpg";
-import Description from "./Components/Description";
-import Name from "./Components/Name";
-import Image from "./Components/Image";
+import Description from "./components/Description";
+import Name from "./components/Name";
+import Image from "./components/Image";
 
 function App() {
   return (
-    <main className="flex bg-black w-full h-full">
-      <div className="m-8 flex-col flex gap-7">
+    <main className="flex flex-col-reverse md:flex-row">
+      <div className=" flex-col flex gap-7 m-8">
         <Name />
         <Description />
       </div>

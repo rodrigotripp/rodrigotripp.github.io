@@ -1,11 +1,7 @@
-import  React from 'react';
-
 function Name() {
-  return(
-    <p>
-      <strong>
-        Rodrigo Tripp
-      </strong>
+  return (
+    <p className="text-sky-50 text-xl">
+      <strong>Rodrigo Tripp</strong>
     </p>
   );
 }

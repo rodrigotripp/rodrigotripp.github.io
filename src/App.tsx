@@ -1,27 +1,17 @@
-import React from 'react';
-import me from './img/sepia.jpg';
-import './App.scss';
-import Description from './Components/Description';
-import Name from './Components/Name';
-import Logos from './Components/Logos';
-
+import me from "./img/sepia.jpg";
+import Description from "./Components/Description";
+import Name from "./Components/Name";
+import Image from "./Components/Image";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <a href='https://www.linkedin.com/in/rodrigotripp/' target='_blank'>
-          <img src={me}
-            className="App-logo"
-            alt="rodrigo-tripp "/>
-          </a>
-          </div>
-        <Name></Name>
-        <Logos/>
-        <Description></Description>
-      </header>
-    </div>
+    <main className="flex bg-black w-full h-full">
+      <div className="m-8 flex-col flex gap-7">
+        <Name />
+        <Description />
+      </div>
+      <Image img={me} />
+    </main>
   );
 }
 

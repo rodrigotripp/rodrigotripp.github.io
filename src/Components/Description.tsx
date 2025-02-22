@@ -1,12 +1,11 @@
-import  React from 'react';
-
 function Description() {
-  return(
-    <div className="description">
-      <p>
+  return (
+    <div className=" text-sky-50">
+      <p>Web developer with a strong UX and UI development experience.</p>
+      <br />
       Mexican, living in Helsinki.
-      Full stack developer with a strong UX and UI development experience.
-      </p><p>Bicycles, cycling and music keep me busy.</p>
+      <br />
+      <p>Bicycles, cycling and music keep me busy.</p>
     </div>
   );
 }

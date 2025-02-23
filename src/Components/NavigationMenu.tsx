@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+import Button from "./Button";
 
 const Icons = () => {
   return (
@@ -21,9 +22,12 @@ const Icons = () => {
 
 function NavigationMenu() {
   return (
-    <nav>
-      <ul className="flex gap-5 md:flex-col">
+    <nav className="flex flex-col-reverse gap-5">
+      <ul className="flex flex-wrap justify-between gap-2 md:flex-col text-slate-300">
         <Icons />
+      </ul>
+      <ul className="flex gap-5 md:flex-col text-slate-300">
+        <Button text="About" />
       </ul>
     </nav>
   );

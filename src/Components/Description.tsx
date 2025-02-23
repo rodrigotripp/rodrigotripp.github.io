@@ -1,7 +1,10 @@
 function Description() {
   return (
     <div className=" text-sky-50">
-      <p>Web developer with a strong UX and UI development experience.</p>
+      <p>
+        Web developer with a strong UX and UI development experience. <br />{" "}
+        <br />I have worked in the past for Nokia, Marimekko and more.
+      </p>
       <br />
       Mexican, living in Helsinki.
       <br />

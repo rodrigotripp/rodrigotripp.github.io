@@ -1,5 +1,5 @@
 import { SocialIcon } from "react-social-icons";
-// import Button from "./Button";
+import Button from "./Button";
 // import Menu from "./Menu";
 
 const Icons = () => {
@@ -27,10 +27,10 @@ function NavigationMenu() {
       <ul className="flex flex-wrap justify-between gap-2 md:flex-col text-slate-300">
         <Icons />
       </ul>
-      {/* <ul className="flex gap-5 md:flex-col text-slate-300">
-        <Button text="About" />
-        <Menu />
-      </ul> */}
+      <ul className="flex gap-5 md:flex-col text-slate-300">
+        <Button text="More about me..." link="/about" />
+        {/* <Menu /> */}
+      </ul>
     </nav>
   );
 }

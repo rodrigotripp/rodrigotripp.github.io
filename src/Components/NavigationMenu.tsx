@@ -1,6 +1,6 @@
 import { SocialIcon } from "react-social-icons";
-// import Button from "./Button";
-// import Menu from "./Menu";
+import Button from "./Button";
+import Menu from "./Menu";
 
 const Icons = () => {
   return (
@@ -21,16 +21,25 @@ const Icons = () => {
   );
 };
 
-function NavigationMenu() {
+type NavigationMenuProps = {
+  onNavigate: (page: "home" | "about") => void;
+  currentPage: string;
+};
+
+function NavigationMenu({ onNavigate }: NavigationMenuProps) {
   return (
     <nav className="flex flex-col-reverse gap-5">
       <ul className="flex flex-wrap justify-between gap-2 md:flex-col text-slate-300">
         <Icons />
       </ul>
-      {/* <ul className="flex gap-5 md:flex-col text-slate-300">
-        <Button text="More about me..." link="/about" /> */}
-      {/* <Menu /> */}
-      {/* </ul> */}
+
+      <ul className="flex gap-5 md:flex-col text-slate-300">
+        <Button
+          children="More about me..."
+          onClick={() => onNavigate("about")}
+        />
+      </ul>
+      <Menu />
     </nav>
   );
 }

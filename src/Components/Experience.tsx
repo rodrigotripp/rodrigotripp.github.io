@@ -8,7 +8,7 @@ function Experience() {
         <h2 className="text-3xl mb-6 pb-2 border-b-2 border-s-stone-100 flex justify-between">
           Work Experience
         </h2>
-        <Button link="/" type="link" text="go back" />
+        <Button href="/" children="go back" />
         <br />
         <br />
         <div className="space-y-3">

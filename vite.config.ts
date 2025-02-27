@@ -4,13 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   base: "",
-  optimizeDeps: {
-    include: ["primereact"],
-  },
   plugins: [react(), tsconfigPaths()],
-  // css: {
-  //   postcss: './postcss.config.ts',
-  // },
   build: {
     outDir: "build",
     commonjsOptions: {

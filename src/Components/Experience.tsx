@@ -4,7 +4,7 @@ function Experience() {
   return (
     <div>
       {/* Experience Section */}
-      <section className=" bg-black p-8 rounded-lg shadow-lg">
+      <section className=" bg-black p-3 rounded-lg shadow-lg">
         <h2 className="text-3xl mb-6 pb-2 border-b-2 border-s-stone-100 flex justify-between">
           Work Experience
         </h2>
@@ -128,7 +128,7 @@ function Experience() {
               key={index}
               className="p-6 rounded-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
             >
-              <h3 className="text-xl  font-semibold mb-4 pb-2 border-b border-gray-200">
+              <h3 className="text-xl  font-semibold mb-2 pb-2 border-b border-gray-200">
                 {category.title}
               </h3>
               <ul>

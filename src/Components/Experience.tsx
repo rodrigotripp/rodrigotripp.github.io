@@ -8,7 +8,7 @@ function Experience() {
         <h2 className="text-3xl mb-6 pb-2 border-b-2 border-s-stone-100 flex justify-between">
           Work Experience
         </h2>
-        <Button href="/" children="go back" />
+        <Button className="underline" href="/" children="go back" />
         <br />
         <br />
         <div className="space-y-3">
@@ -102,10 +102,10 @@ function Experience() {
       </section>
 
       {/* Skills Section */}
-      <section className="p-8 rounded-lg shadow-lg">
+      <section className="p-3 rounded-lg shadow-lg">
         <h2 className="text-3xl pb-2 border-b-2 text-slate-300">Skills</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-6 gap-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               title: "Programming Languages",

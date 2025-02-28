@@ -5,6 +5,7 @@ import Image from "./components/Image";
 import NavigationMenu from "./components/NavigationMenu";
 import About from "./components/view/About";
 import { useState } from "react";
+// import Menu from "./components/Menu";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<"home" | "about">("home");
@@ -26,6 +27,7 @@ function App() {
         return (
           <div className="flex flex-col-reverse justify-between md:flex-row">
             <div className=" flex-col flex gap-7 m-8">
+              {/* <Menu items={[{ label: "home", href: "/" }]} /> */}
               <Name />
               <Description />
               <NavigationMenu

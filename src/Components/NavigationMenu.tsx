@@ -1,6 +1,5 @@
 import { SocialIcon } from "react-social-icons";
 import Button from "./Button";
-import Menu from "./Menu";
 
 const Icons = () => {
   return (
@@ -33,13 +32,13 @@ function NavigationMenu({ onNavigate }: NavigationMenuProps) {
         <Icons />
       </ul>
 
-      <ul className="flex gap-5 md:flex-col text-slate-300">
+      <ul className="text-slate-300">
         <Button
+          className="underline"
           children="More about me..."
           onClick={() => onNavigate("about")}
         />
       </ul>
-      <Menu />
     </nav>
   );
 }

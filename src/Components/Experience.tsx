@@ -17,7 +17,7 @@ function Experience() {
             <h3 className="text-xl text-orange-300 font-semibold">
               Software Developer
             </h3>
-            <div className="text-slate-300  font-bold text-lg">Trivore</div>
+            <div className="text-black font-bold text-lg">Trivore</div>
             <div className="text-gray-600 italic mb-4">
               September 2024 - January 2025
             </div>
@@ -39,7 +39,7 @@ function Experience() {
             <h3 className="text-xl text-orange-300 font-semibold">
               Front-end developer and SCRUM master
             </h3>
-            <div className="text-slate-300 font-bold text-lg">Marimekko</div>
+            <div className="text-black font-bold text-lg">Marimekko</div>
             <div className="text-gray-600 italic mb-4">
               February 2019 - April 2024
             </div>
@@ -61,9 +61,7 @@ function Experience() {
             <h3 className="text-xl text-orange-300 font-semibold">
               Front-end developer
             </h3>
-            <div className="text-slate-300 font-bold text-lg">
-              Comptel/Nokia
-            </div>
+            <div className="text-black font-bold text-lg">Comptel/Nokia</div>
             <div className="text-gray-600 italic mb-4">
               August 2017 - February 2019
             </div>
@@ -83,7 +81,7 @@ function Experience() {
             <h3 className="text-xl text-orange-300 font-semibold">
               UI developer
             </h3>
-            <div className="text-slate-300 font-bold text-lg">Virta ltd.</div>
+            <div className="text-black font-bold text-lg">Virta ltd.</div>
             <div className="text-gray-600 italic mb-4">
               November 2016 - August 2017
             </div>

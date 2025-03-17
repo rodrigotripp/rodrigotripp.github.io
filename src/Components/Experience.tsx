@@ -4,7 +4,7 @@ function Experience() {
   return (
     <div>
       {/* Experience Section */}
-      <section className=" bg-black p-3 rounded-lg shadow-lg">
+      <section className=" bg-white p-3 rounded-lg shadow-lg text-black">
         <h2 className="text-3xl mb-6 pb-2 border-b-2 border-s-stone-100 flex justify-between">
           Work Experience
         </h2>
@@ -102,8 +102,8 @@ function Experience() {
       </section>
 
       {/* Skills Section */}
-      <section className="p-3 rounded-lg shadow-lg">
-        <h2 className="text-3xl pb-2 border-b-2 text-slate-300">Skills</h2>
+      <section className="p-3 rounded-lg shadow-lg bg-white text-black">
+        <h2 className="text-3xl pb-2 border-b-2 ">Skills</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {[

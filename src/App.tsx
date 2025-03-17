@@ -15,17 +15,27 @@ function App() {
     setCurrentPage(page);
   };
 
-  console.log(currentPage);
-
   // Render content based on currentPage state
   const renderContent = () => {
     switch (currentPage) {
       case "about":
-        return <About />;
+        return (
+          <div className="flex flex-col-reverse justify-between md:flex-row w-full">
+            <div className=" flex-col flex gap-7 m-8">
+              <Name />
+              <Description />
+              <NavigationMenu
+                onNavigate={handleNavigate}
+                currentPage={currentPage}
+              />
+            </div>
+            <About />
+          </div>
+        );
       case "home":
       default:
         return (
-          <div className="flex flex-col-reverse justify-between md:flex-row">
+          <div className="flex flex-col-reverse justify-between md:flex-row w-full">
             <div className=" flex-col flex gap-7 m-8">
               {/* <Menu items={[{ label: "home", href: "/" }]} /> */}
               <Name />

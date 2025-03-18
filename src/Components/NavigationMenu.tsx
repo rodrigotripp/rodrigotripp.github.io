@@ -1,5 +1,6 @@
 import { SocialIcon } from "react-social-icons";
 import Button from "./Button";
+import { Link } from "react-router";
 
 const Icons = () => {
   return (
@@ -39,6 +40,30 @@ function NavigationMenu({ onNavigate }: NavigationMenuProps) {
           onClick={() => onNavigate("about")}
         />
       </ul>
+      <div className="text-slate-300">
+        <ul>
+          <h1>Examples</h1>
+          <li>
+            <Link
+              to="https://rodrigotripp.vercel.app/meals"
+              className="underline"
+              target="_blank"
+            >
+              Meals with NextJs
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link
+              to="https://meals-vite-vue.vercel.app/"
+              className="text-slate-300 underline"
+              target="_blank"
+            >
+              Meals with Vue/vite
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

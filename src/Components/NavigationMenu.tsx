@@ -33,16 +33,9 @@ function NavigationMenu({ onNavigate }: NavigationMenuProps) {
         <Icons />
       </ul>
 
-      <ul className="text-slate-300">
-        <Button
-          className="underline"
-          children="More about me..."
-          onClick={() => onNavigate("about")}
-        />
-      </ul>
       <div className="text-slate-300">
-        <ul>
-          <h1>Examples</h1>
+        <ul className="my-4">
+          <h1>Demo Sites for fun!</h1>
           <li>
             <Link
               to="https://rodrigotripp.vercel.app/meals"
@@ -63,6 +56,14 @@ function NavigationMenu({ onNavigate }: NavigationMenuProps) {
             </Link>
           </li>
         </ul>
+
+        <div className="text-slate-300">
+          <Button
+            className="underline"
+            children="My work experience"
+            onClick={() => onNavigate("about")}
+          />
+        </div>
       </div>
     </nav>
   );

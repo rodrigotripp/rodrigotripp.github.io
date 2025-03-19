@@ -2,7 +2,7 @@ import { SocialIcon } from "react-social-icons";
 import Button from "./Button";
 import { Link } from "react-router";
 
-const Icons = () => {
+export const Icons = () => {
   return (
     <>
       <li>
@@ -29,7 +29,7 @@ type NavigationMenuProps = {
 function NavigationMenu({ onNavigate }: NavigationMenuProps) {
   return (
     <nav className="flex flex-col-reverse gap-5">
-      <ul className="flex flex-wrap justify-between gap-2 md:flex-col text-slate-300">
+      <ul className="flex flex-wrap justify-start gap-9 md:flex-col text-slate-300 bg-slate-600 rounded-2xl w-80 md:bg-transparent p-1">
         <Icons />
       </ul>
 
@@ -61,7 +61,10 @@ function NavigationMenu({ onNavigate }: NavigationMenuProps) {
           <Button
             className="underline"
             children="My work experience"
-            onClick={() => onNavigate("about")}
+            onClick={() => {
+              onNavigate("about");
+              window.scrollTo(0, 0);
+            }}
           />
         </div>
       </div>

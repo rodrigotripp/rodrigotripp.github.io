@@ -29,7 +29,7 @@ type NavigationMenuProps = {
 function NavigationMenu({ onNavigate }: NavigationMenuProps) {
   return (
     <nav className="flex flex-col-reverse gap-5">
-      <ul className="flex flex-wrap justify-start gap-9 md:flex-col text-slate-300 bg-slate-600 rounded-2xl w-80 md:bg-transparent p-1">
+      <ul className="flex flex-wrap justify-start gap-9 md:flex-col text-slate-300 bg-slate-600 rounded-2xl w-80 md:bg-transparent p-1 md:gap-4">
         <Icons />
       </ul>
 

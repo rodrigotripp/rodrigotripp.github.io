@@ -9,6 +9,11 @@ function Description() {
       Mexican, living in Helsinki.
       <br />
       <p>Bicycles, cycling and music keep me busy.</p>
+      <br />
+      <br />
+      <p>
+        <b>Working for Elisa Oyj</b>
+      </p>
     </div>
   );
 }

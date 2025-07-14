@@ -59,11 +59,8 @@ function Experience() {
               skills: ["Git", "Docker", "Magento"],
             },
           ].map((category, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-lg transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
-            >
-              <h3 className="text-xl  font-semibold mb-2 pb-2 border-b border-gray-200">
+            <div key={index} className="p-6 rounded-lg shadow-md bg-slate-50">
+              <h3 className="text-xl bg-slate-50font-semibold mb-2 pb-2 border-b border-gray-200">
                 {category.title}
               </h3>
               <ul>

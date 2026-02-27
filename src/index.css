@@ -63,7 +63,7 @@ body {
   font-family: sans-serif;
   font-weight: 300;
 
-  animation: moveBackground 1000s linear infinite;
+  animation: moveBackground 3000s linear infinite;
 }
 
 /*

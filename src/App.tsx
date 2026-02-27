@@ -1,4 +1,5 @@
-import me from "./img/sepia.jpg";
+// import me from "./img/sepia.jpg";
+import turku from "./img/turku.jpeg";
 import Description from "./components/Description";
 import Name from "./components/Name";
 import Image from "./components/Image";
@@ -46,7 +47,7 @@ function App() {
                 currentPage={currentPage}
               />
             </div>
-            <Image img={me} />
+            <Image img={turku} />
           </div>
         );
     }

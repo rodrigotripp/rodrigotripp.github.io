@@ -5,6 +5,7 @@ import Image from "./components/Image";
 import NavigationMenu from "./components/NavigationMenu";
 import About from "./components/view/About";
 import { useState } from "react";
+import { GlassDiv } from "./components/GlassDiv";
 // import Menu from "./components/Menu";
 
 function App() {
@@ -38,8 +39,8 @@ function App() {
           <div className="flex flex-col-reverse justify-between md:flex-row w-full">
             <div className=" flex-col flex gap-7 m-8">
               {/* <Menu items={[{ label: "home", href: "/" }]} /> */}
-              <Name />
-              <Description />
+              <GlassDiv children={<Name />} />
+              <GlassDiv children={<Description />} />
               <NavigationMenu
                 onNavigate={handleNavigate}
                 currentPage={currentPage}

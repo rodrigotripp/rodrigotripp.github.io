@@ -1,6 +1,6 @@
 function Description() {
   return (
-    <div className=" text-sky-50 text-xl">
+    <div className=" text-teal-800 text-xl">
       <p>
         Web developer with a strong UX and UI development experience. <br />{" "}
         <br />I have worked in the past for Nokia, Marimekko and more.

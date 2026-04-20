@@ -65,3 +65,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+El portafolio quedó con una arquitectura mucho más limpia. Cuando quieras agregar más datos (proyectos, blog, etc.) solo necesitas:
+
+Crear el modelo en api/models/
+Crear el endpoint en api/
+Crear el hook en src/hooks/
+Usarlo en el componente
+¡Buena suerte con el deploy en Vercel! 🚀

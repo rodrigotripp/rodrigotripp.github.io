@@ -14,8 +14,7 @@ function Sidebar() {
           <p>
             Web developer with a strong UX and UI development experience.
             <br />
-            <br />
-            I have worked in the past for Nokia, Marimekko and more.
+            <br />I have worked in the past for Nokia, Marimekko and more.
           </p>
           <br />
           Mexican, living in Helsinki.

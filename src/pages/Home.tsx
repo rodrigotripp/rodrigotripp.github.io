@@ -1,23 +1,15 @@
 import turku from "../img/turku.jpeg";
-import Description from "../components/Description";
-import Name from "../components/Name";
-import Image from "../components/Image";
-import NavigationMenu from "../components/NavigationMenu";
-import { GlassDiv } from "../components/GlassDiv";
+import Sidebar from "../shared/Sidebar";
 
 function Home() {
   return (
     <div className="flex flex-col-reverse justify-between md:flex-row w-full">
-      <div className="flex flex-col gap-7 m-8">
-        <GlassDiv>
-          <Name />
-        </GlassDiv>
-        <GlassDiv>
-          <Description />
-        </GlassDiv>
-        <NavigationMenu />
+      <Sidebar />
+      <div className="relative w-full">
+        <img src={turku} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 md:bg-gradient-to-r from-2% to-yellow-50/20 bg-yellow-100/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-5% to-transparent" />
       </div>
-      <Image img={turku} />
     </div>
   );
 }

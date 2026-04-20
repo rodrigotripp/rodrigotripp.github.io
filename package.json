@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://rodrigotripp.github.io",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -13,7 +13,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "seed": "tsx scripts/seed.ts",
-    "dev:vite": "vite"
+    "dev:vercel": "vercel dev"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.99.2",

@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             />
           </filter>
         </svg>
-        <main className="min-h-screen">
+        <main className="min-h-screen h-full">
           <Routes>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />

@@ -3,7 +3,7 @@ import Sidebar from "../shared/Sidebar";
 
 function Home() {
   return (
-    <div className="flex flex-col-reverse md:flex-row w-full min-h-screen">
+    <div className="flex flex-col-reverse md:flex-row w-full h-full">
       <Sidebar />
       <div className="relative flex-1 min-h-64 md:min-h-0">
         <img src={turku} className="absolute inset-0 w-full h-full object-cover" />

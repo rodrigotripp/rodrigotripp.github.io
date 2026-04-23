@@ -11,12 +11,4 @@ export default defineConfig({
       include: [/node_modules/],
     },
   },
-  server: {
-    proxy: {
-      "/api": {
-        target: "http://localhost:3000",
-        changeOrigin: true,
-      },
-    },
-  },
 });

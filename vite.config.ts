@@ -19,11 +19,11 @@ export default defineConfig({
           if (!url.startsWith("/api/")) return next();
 
           const name = url.replace("/api/", "").split("?")[0];
-          const jsonPath = path.resolve(__dirname, `public/api/${name}.json`);
+          const filePath = path.resolve(__dirname, `public/api/${name}`);
 
-          if (fs.existsSync(jsonPath)) {
+          if (fs.existsSync(filePath)) {
             res.setHeader("Content-Type", "application/json");
-            res.end(fs.readFileSync(jsonPath, "utf-8"));
+            res.end(fs.readFileSync(filePath, "utf-8"));
           } else {
             next();
           }

@@ -2,7 +2,6 @@
   "name": "rodrigotripp.github.io",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "homepage": "https://rodrigotripp.github.io",
   "scripts": {
     "dev": "vite",

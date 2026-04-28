@@ -16,7 +16,9 @@ if (!MONGODB_URI) {
 }
 
 const read = (name: string) =>
-  JSON.parse(readFileSync(resolve(process.cwd(), `public/api/${name}`), "utf-8"));
+  JSON.parse(
+    readFileSync(resolve(process.cwd(), `public/api/${name}`), "utf-8"),
+  );
 
 const experiences = read("experience");
 const skillCategories = read("skills");

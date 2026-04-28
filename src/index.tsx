@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Music from "./pages/Music";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -67,6 +70,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Routes>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/:slug" element={<BlogPost />} />
+            <Route path="music" element={<Music />} />
           </Routes>
         </main>
       </BrowserRouter>

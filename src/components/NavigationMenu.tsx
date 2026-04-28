@@ -22,6 +22,8 @@ const Icons: React.FC = () => (
 function NavigationMenu() {
   const { pathname } = useLocation();
   const isAbout = pathname === "/about";
+  const isBlog = pathname.startsWith("/blog");
+  const isMusic = pathname === "/music";
 
   return (
     <nav className="flex flex-col-reverse gap-5 text-slate-300">
@@ -60,13 +62,35 @@ function NavigationMenu() {
       </div>
 
       <GlassDiv hover>
-        <Link
-          className="underline"
-          to={isAbout ? "/" : "/about"}
-          onClick={() => window.scrollTo(0, 0)}
-        >
-          {isAbout ? "← Back to home" : "My work experience"}
-        </Link>
+        <ul className="space-y-3 py-1">
+          <li>
+            <Link
+              className="underline"
+              to={isAbout ? "/" : "/about"}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              {isAbout ? "← Back to home" : "My work experience"}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="underline"
+              to={isBlog ? "/" : "/blog"}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              {isBlog ? "← Back to home" : "Blog"}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="underline"
+              to={isMusic ? "/" : "/music"}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              {isMusic ? "← Back to home" : "Music 🎵"}
+            </Link>
+          </li>
+        </ul>
       </GlassDiv>
     </nav>
   );

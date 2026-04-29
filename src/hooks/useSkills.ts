@@ -1,16 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import type { SkillCategory } from "../types/api";
+import { sanityClient } from "../lib/sanity";
 
-async function fetchSkills(): Promise<SkillCategory[]> {
-  const res = await fetch("/api/skills");
-  if (!res.ok) throw new Error("Failed to load skills data");
-  return res.json() as Promise<SkillCategory[]>;
-}
+const query = `*[_type == "skillCategory"] | order(order asc) {
+  _id, title, skills, order
+}`;
 
 export function useSkills() {
-  return useQuery({
+  return useQuery<SkillCategory[]>({
     queryKey: ["skills"],
-    queryFn: fetchSkills,
+    queryFn: () => sanityClient.fetch(query),
     staleTime: 1000 * 60 * 5,
   });
 }

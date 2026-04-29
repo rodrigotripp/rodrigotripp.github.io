@@ -1,5 +1,14 @@
 [
   {
+    "title": "Building a Personal Portfolio with React and Vite",
+    "slug": "building-personal-portfolio-react-vite",
+    "excerpt": "A walkthrough of how I built this site using React 19, Vite, Tailwind CSS, and MongoDB hosted on Vercel.",
+    "content": "<p>When it came time to revamp my personal site, I wanted something fast, modern, and easy to maintain. The stack I landed on was <strong>React 19 + Vite + Tailwind CSS</strong> on the frontend, and <strong>MongoDB Atlas</strong> with Vercel serverless functions on the backend.</p><h2>Why Vite?</h2><p>Vite's dev server startup is near-instant, and its build output is lean. Coming from Create React App, the improvement in DX is significant.</p><h2>Tailwind for styling</h2><p>Tailwind lets me design directly in JSX without context-switching to CSS files. The utility-first approach keeps styles co-located with components.</p><h2>MongoDB for content</h2><p>Storing experience, skills, and now blog posts in MongoDB means I can update content without a redeployment. A quick seed script syncs local JSON files to the database.</p><p>The end result is a site that loads fast, looks clean, and is simple to extend — which is exactly what you're reading right now!</p>",
+    "tags": ["React", "Vite", "Tailwind", "MongoDB"],
+    "publishedAt": "2025-01-15T00:00:00.000Z",
+    "order": 3
+  },
+  {
     "title": "Cycling in Helsinki: Routes I Recommend",
     "slug": "cycling-helsinki-routes",
     "excerpt": "Helsinki is a fantastic cycling city. Here are some of my favourite routes that I ride regularly.",

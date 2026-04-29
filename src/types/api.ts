@@ -18,9 +18,9 @@ export interface SkillCategory {
 export interface BlogPost {
   _id: string;
   title: string;
-  slug: string;
+  slug: { current: string };
   excerpt: string;
-  content?: string;
+  content?: import("@portabletext/react").PortableTextBlock[];
   tags?: string[];
   publishedAt: string;
   order: number;

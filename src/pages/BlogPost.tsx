@@ -1,4 +1,6 @@
 import { Link, useParams } from "react-router";
+import type { PortableTextBlock } from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 import Sidebar from "../shared/Sidebar";
 import { useBlogPost } from "../hooks/useBlog";
 
@@ -45,10 +47,11 @@ function BlogPost() {
                   day: "numeric",
                 })}
               </p>
-              <div
-                className="blog-content"
-                dangerouslySetInnerHTML={{ __html: post.content ?? "" }}
-              />
+              {post.content && (
+                <div className="blog-content prose max-w-none">
+                  <PortableText value={post.content} />
+                </div>
+              )}
             </article>
           )}
         </div>

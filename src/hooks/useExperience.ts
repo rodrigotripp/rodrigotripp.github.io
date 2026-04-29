@@ -1,16 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Experience } from "../types/api";
+import { sanityClient } from "../lib/sanity";
 
-async function fetchExperience(): Promise<Experience[]> {
-  const res = await fetch("/api/experience");
-  if (!res.ok) throw new Error("Failed to load experience data");
-  return res.json() as Promise<Experience[]>;
-}
+const query = `*[_type == "experience"] | order(order asc) {
+  _id, title, company, date, duties, technologies, order
+}`;
 
 export function useExperience() {
-  return useQuery({
+  return useQuery<Experience[]>({
     queryKey: ["experience"],
-    queryFn: fetchExperience,
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    queryFn: () => sanityClient.fetch(query),
+    staleTime: 1000 * 60 * 5,
   });
 }

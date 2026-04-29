@@ -33,7 +33,7 @@ function Blog() {
                   ))}
                 </div>
                 <h3 className="text-xl text-blue-600 font-semibold mb-1">
-                  <Link to={`/blog/${post.slug}`} className="hover:underline">
+                  <Link to={`/blog/${post.slug.current}`} className="hover:underline">
                     {post.title}
                   </Link>
                 </h3>
@@ -46,7 +46,7 @@ function Blog() {
                 </p>
                 <p className="text-gray-700">{post.excerpt}</p>
                 <Link
-                  to={`/blog/${post.slug}`}
+                  to={`/blog/${post.slug.current}`}
                   className="inline-block mt-3 text-blue-600 text-sm font-medium hover:underline"
                 >
                   Read more →

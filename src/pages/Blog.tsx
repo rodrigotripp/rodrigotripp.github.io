@@ -10,7 +10,9 @@ function Blog() {
       <Sidebar />
       <section className="p-4 md:p-8 w-full">
         <div className="bg-white p-4 rounded-lg shadow-lg text-black md:p-6">
-          <h2 className="text-3xl mb-6 pb-2 border-b-2 border-stone-100">Blog</h2>
+          <h2 className="text-3xl mb-6 pb-2 border-b-2 border-stone-100">
+            Blog
+          </h2>
 
           {isLoading && (
             <p className="text-gray-400 animate-pulse">Loading posts...</p>
@@ -21,7 +23,10 @@ function Blog() {
 
           <div className="space-y-6">
             {posts?.map((post) => (
-              <article key={post._id} className="p-4 rounded-lg shadow-md bg-slate-50">
+              <article
+                key={post._id}
+                className="p-4 rounded-lg shadow-md bg-slate-50"
+              >
                 <div className="flex flex-wrap gap-2 mb-2">
                   {post.tags?.map((tag) => (
                     <span
@@ -33,7 +38,10 @@ function Blog() {
                   ))}
                 </div>
                 <h3 className="text-xl text-blue-600 font-semibold mb-1">
-                  <Link to={`/blog/${post.slug.current}`} className="hover:underline">
+                  <Link
+                    to={`/blog/${post.slug.current}`}
+                    className="hover:underline"
+                  >
                     {post.title}
                   </Link>
                 </h3>

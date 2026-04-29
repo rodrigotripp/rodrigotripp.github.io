@@ -7,7 +7,8 @@ const query = `*[_type == "siteSettings"][0] {
   photo { asset -> { url }, hotspot },
   bio,
   currentEmployer,
-  location
+  location,
+  socialLinks
 }`;
 
 export function useSiteSettings() {

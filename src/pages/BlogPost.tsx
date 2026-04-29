@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router";
-import type { PortableTextBlock } from "@portabletext/react";
 import { PortableText } from "@portabletext/react";
 import Sidebar from "../shared/Sidebar";
 import { useBlogPost } from "../hooks/useBlog";
@@ -23,10 +22,7 @@ function BlogPost() {
           {isLoading && (
             <p className="text-gray-400 animate-pulse">Loading...</p>
           )}
-          {isError && (
-            <p className="text-red-500">Could not load this post.</p>
-          )}
-
+          {isError && <p className="text-red-500">Could not load this post.</p>}
           {post && (
             <article>
               <div className="flex flex-wrap gap-2 mb-3">

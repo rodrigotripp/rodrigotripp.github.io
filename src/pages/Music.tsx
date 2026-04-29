@@ -6,9 +6,12 @@ function Music() {
       <Sidebar />
       <section className="p-4 md:p-8 w-full">
         <div className="bg-white p-4 rounded-lg shadow-lg text-black md:p-6">
-          <h2 className="text-3xl mb-2 pb-2 border-b-2 border-stone-100">Music</h2>
+          <h2 className="text-3xl mb-2 pb-2 border-b-2 border-stone-100">
+            Music
+          </h2>
           <p className="text-gray-500 mb-6">
-            My tracks on SoundCloud — a mix of original productions and experiments.
+            My tracks on SoundCloud — a mix of original productions and
+            experiments.
           </p>
           <iframe
             title="Rodrigo Tripp on SoundCloud"

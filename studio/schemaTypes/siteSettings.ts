@@ -16,5 +16,16 @@ export const siteSettings = defineType({
     defineField({name: 'bio', type: 'text', rows: 4}),
     defineField({name: 'currentEmployer', title: 'Current Employer', type: 'string'}),
     defineField({name: 'location', type: 'string'}),
+    defineField({
+      name: 'socialLinks',
+      title: 'Social Links',
+      type: 'object',
+      fields: [
+        defineField({name: 'github', type: 'url', title: 'GitHub URL'}),
+        defineField({name: 'linkedin', type: 'url', title: 'LinkedIn URL'}),
+        defineField({name: 'instagram', type: 'url', title: 'Instagram URL'}),
+        defineField({name: 'soundcloud', type: 'url', title: 'SoundCloud URL'}),
+      ],
+    }),
   ],
 })

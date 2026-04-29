@@ -32,4 +32,10 @@ export interface SiteSettings {
   bio?: string;
   currentEmployer?: string;
   location?: string;
+  socialLinks?: {
+    github?: string;
+    linkedin?: string;
+    instagram?: string;
+    soundcloud?: string;
+  };
 }

@@ -1,35 +1,41 @@
 import { SocialIcon } from "react-social-icons";
 import { Link, useLocation } from "react-router";
 import { GlassDiv } from "./GlassDiv";
+import { useSiteSettings } from "../hooks/useSiteSettings";
 
-const Icons: React.FC = () => (
-  <>
-    <li>
-      <SocialIcon url="https://github.com/rodrigotripp" />
-    </li>
-    <li>
-      <SocialIcon url="https://linkedin.com/in/rodrigotripp" />
-    </li>
-    <li>
-      <SocialIcon url="https://instagram.com/rdrgtrpp" />
-    </li>
-    <li>
-      <SocialIcon url="https://soundcloud.com/ronsumusic" />
-    </li>
-  </>
-);
+const DEFAULT_SOCIAL = {
+  github: "https://github.com/rodrigotripp",
+  linkedin: "https://linkedin.com/in/rodrigotripp",
+  instagram: "https://instagram.com/rdrgtrpp",
+  soundcloud: "https://soundcloud.com/ronsumusic",
+};
 
 function NavigationMenu() {
   const { pathname } = useLocation();
+  const { data } = useSiteSettings();
+
   const isAbout = pathname === "/about";
   const isBlog = pathname.startsWith("/blog");
   const isMusic = pathname === "/music";
+
+  const social = { ...DEFAULT_SOCIAL, ...data?.socialLinks };
 
   return (
     <nav className="flex flex-col-reverse gap-5 text-slate-300">
       <ul className="flex flex-wrap justify-start gap-9 md:flex-col rounded-2xl w-80 p-1 md:gap-4">
         <GlassDiv hover>
-          <Icons />
+          <li>
+            <SocialIcon url={social.github} />
+          </li>
+          <li>
+            <SocialIcon url={social.linkedin} />
+          </li>
+          <li>
+            <SocialIcon url={social.instagram} />
+          </li>
+          <li>
+            <SocialIcon url={social.soundcloud} />
+          </li>
         </GlassDiv>
       </ul>
 

@@ -25,3 +25,4 @@ build
 tsconfig.tsbuildinfo
 *.tsbuildinfo
 .env*.local
+.env

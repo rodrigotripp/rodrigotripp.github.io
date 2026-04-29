@@ -25,3 +25,11 @@ export interface BlogPost {
   publishedAt: string;
   order: number;
 }
+
+export interface SiteSettings {
+  name: string;
+  photo?: { asset: { url: string }; hotspot?: { x: number; y: number } };
+  bio?: string;
+  currentEmployer?: string;
+  location?: string;
+}

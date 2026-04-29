@@ -23,7 +23,6 @@ const BlogPostSchema = new Schema<IBlogPost>(
   { timestamps: true },
 );
 
-BlogPostSchema.index({ slug: 1 }, { unique: true });
 BlogPostSchema.index({ order: -1 });
 
 const BlogPost: Model<IBlogPost> =

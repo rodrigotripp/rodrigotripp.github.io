@@ -26,7 +26,7 @@ async function seedBlogs() {
   for (const post of blogPosts) {
     await BlogPost.findOneAndUpdate({ slug: post.slug }, post, {
       upsert: true,
-      new: true,
+      returnDocument: "after",
     });
     console.log(`   ✔ ${post.title}`);
   }

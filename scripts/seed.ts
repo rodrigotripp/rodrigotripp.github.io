@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 import { resolve } from "path";
-import { readFileSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 config({ path: resolve(process.cwd(), ".env.local") });
 
 import mongoose from "mongoose";
@@ -15,10 +15,14 @@ if (!MONGODB_URI) {
   process.exit(1);
 }
 
-const read = (name: string) =>
-  JSON.parse(
-    readFileSync(resolve(process.cwd(), `public/api/${name}`), "utf-8"),
-  );
+const read = (name: string) => {
+  const filePath = resolve(process.cwd(), `public/api/${name}`);
+  if (!existsSync(filePath)) {
+    console.warn(`⚠️   Skipping ${name} — file not found.`);
+    return null;
+  }
+  return JSON.parse(readFileSync(filePath, "utf-8"));
+};
 
 const experiences = read("experience");
 const skillCategories = read("skills");
@@ -30,18 +34,24 @@ async function seed() {
   console.log("✅  Connected.");
 
   console.log("🗑️   Clearing existing data...");
-  await Experience.deleteMany({});
-  await SkillCategory.deleteMany({});
-  await BlogPost.deleteMany({});
+  if (experiences) await Experience.deleteMany({});
+  if (skillCategories) await SkillCategory.deleteMany({});
+  if (blogPosts) await BlogPost.deleteMany({});
 
-  console.log("🌱  Inserting experience...");
-  await Experience.insertMany(experiences);
+  if (experiences) {
+    console.log("🌱  Inserting experience...");
+    await Experience.insertMany(experiences);
+  }
 
-  console.log("🌱  Inserting skills...");
-  await SkillCategory.insertMany(skillCategories);
+  if (skillCategories) {
+    console.log("🌱  Inserting skills...");
+    await SkillCategory.insertMany(skillCategories);
+  }
 
-  console.log("🌱  Inserting blog posts...");
-  await BlogPost.insertMany(blogPosts);
+  if (blogPosts) {
+    console.log("🌱  Inserting blog posts...");
+    await BlogPost.insertMany(blogPosts);
+  }
 
   console.log("✅  Seed complete.");
   await mongoose.disconnect();

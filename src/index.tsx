@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Music from "./pages/Music";
+import SidebarLayout from "./layouts/SidebarLayout";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -68,11 +69,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </svg>
         <main className="min-h-screen h-full">
           <Routes>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogPost />} />
-            <Route path="music" element={<Music />} />
+            <Route element={<SidebarLayout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="blog/:slug" element={<BlogPost />} />
+              <Route path="music" element={<Music />} />
+            </Route>
           </Routes>
         </main>
       </BrowserRouter>

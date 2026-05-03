@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router";
 import { PortableText } from "@portabletext/react";
-import Sidebar from "../shared/Sidebar";
 import { useBlogPost } from "../hooks/useBlog";
 
 function BlogPost() {
@@ -8,9 +7,7 @@ function BlogPost() {
   const { data: post, isLoading, isError } = useBlogPost(slug ?? "");
 
   return (
-    <div className="flex flex-col-reverse justify-between md:flex-row w-full">
-      <Sidebar />
-      <section className="p-4 md:p-8 w-full">
+    <section className="p-4 md:p-8 w-full">
         <div className="bg-white p-4 rounded-lg shadow-lg text-black md:p-6">
           <Link
             to="/blog"
@@ -52,7 +49,6 @@ function BlogPost() {
           )}
         </div>
       </section>
-    </div>
   );
 }
 

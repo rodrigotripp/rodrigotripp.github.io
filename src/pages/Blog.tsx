@@ -1,14 +1,11 @@
 import { Link } from "react-router";
-import Sidebar from "../shared/Sidebar";
 import { useBlogPosts } from "../hooks/useBlog";
 
 function Blog() {
   const { data: posts, isLoading, isError } = useBlogPosts();
 
   return (
-    <div className="flex flex-col-reverse justify-between md:flex-row w-full">
-      <Sidebar />
-      <section className="p-4 md:p-8 w-full">
+    <section className="p-4 md:p-8 w-full">
         <div className="bg-white p-4 rounded-lg shadow-lg text-black md:p-6">
           <h2 className="text-3xl mb-6 pb-2 border-b-2 border-stone-100">
             Blog
@@ -68,7 +65,6 @@ function Blog() {
           </div>
         </div>
       </section>
-    </div>
   );
 }
 

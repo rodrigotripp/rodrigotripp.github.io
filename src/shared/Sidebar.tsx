@@ -11,7 +11,7 @@ function Sidebar() {
   const photoUrl = data?.photo?.asset?.url;
 
   return (
-    <aside className="flex flex-col gap-7 m-8">
+    <aside className="flex flex-col flex-1 gap-7 m-8">
       <GlassDiv>
         {photoUrl && (
           <img

@@ -1,4 +1,4 @@
-import InstagramFeed from "../components/InstagramFeed";
+// import InstagramFeed from "../components/InstagramFeed";
 
 function Music() {
   return (
@@ -31,7 +31,7 @@ function Music() {
             soundcloud.com/ronsumusic
           </a>
         </p>
-        <InstagramFeed />
+        {/* <InstagramFeed /> */}
       </div>
     </section>
   );

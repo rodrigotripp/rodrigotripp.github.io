@@ -1,6 +1,5 @@
 import { sanityClient } from "../lib/sanity";
 import type { Experience, SkillCategory } from "../types/api";
-import type { Route } from "./+types/about";
 import { useLoaderData } from "react-router";
 
 const experienceQuery = `*[_type == "experience"] | order(order asc) {
@@ -11,7 +10,7 @@ const skillsQuery = `*[_type == "skillCategory"] | order(order asc) {
   _id, title, skills, order
 }`;
 
-export async function loader(_args: Route.LoaderArgs) {
+export async function loader() {
   const [experiences, skillCategories] = await Promise.all([
     sanityClient.fetch<Experience[]>(experienceQuery),
     sanityClient.fetch<SkillCategory[]>(skillsQuery),

@@ -1,13 +1,12 @@
 import { Link, useLoaderData } from "react-router";
 import { sanityClient } from "../lib/sanity";
 import type { BlogPost } from "../types/api";
-import type { Route } from "./+types/blog";
 
 const blogListQuery = `*[_type == "blogPost"] | order(order desc) {
   _id, title, slug, excerpt, tags, publishedAt, order
 }`;
 
-export async function loader(_args: Route.LoaderArgs) {
+export async function loader() {
   const posts = await sanityClient.fetch<BlogPost[]>(blogListQuery);
   return { posts };
 }

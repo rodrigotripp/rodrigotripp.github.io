@@ -1,7 +1,7 @@
 import { SocialIcon } from "react-social-icons";
 import { Link, useLocation } from "react-router";
 import { GlassDiv } from "./GlassDiv";
-import { useSiteSettings } from "../hooks/useSiteSettings";
+import { useSidebarData } from "../routes/_layout";
 
 const DEFAULT_SOCIAL = {
   github: "https://github.com/rodrigotripp",
@@ -12,17 +12,17 @@ const DEFAULT_SOCIAL = {
 
 function NavigationMenu() {
   const { pathname } = useLocation();
-  const { data } = useSiteSettings();
+  const settings = useSidebarData();
 
   const isAbout = pathname === "/about";
   const isBlog = pathname.startsWith("/blog");
   const isMusic = pathname === "/music";
 
-  const social = { ...DEFAULT_SOCIAL, ...data?.socialLinks };
+  const social = { ...DEFAULT_SOCIAL, ...settings?.socialLinks };
 
   return (
     <nav className="flex flex-col-reverse gap-5 text-slate-300">
-      <ul className="flex flex-wrap justify-start gap-9 md:flex-col rounded-2xl w-70 p-1 md:gap-4">
+      <ul className="flex flex-wrap justify-start gap-9 md:flex-col rounded-2xl w-full max-w-xs p-1 md:gap-4">
         <GlassDiv hover>
           <li>
             <SocialIcon url={social.github} />

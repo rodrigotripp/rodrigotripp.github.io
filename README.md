@@ -1,76 +1,77 @@
+# rodrigotripp.github.io
 
-## Available Scripts
+Personal portfolio site for Rodrigo Tripp €” built with React Router v7 framework mode, pre-rendered as static HTML at build time.
 
-In the project directory, you can run:
+**Live:** [rodrigotripp.github.io](https://rodrigotripp.github.io)
 
-### `yarn start`
+## Tech Stack
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **[React Router v7](https://reactrouter.com)** €” framework mode with SSG pre-rendering
+- **[Vite](https://vitejs.dev)** €” build tool
+- **[Tailwind CSS v4](https://tailwindcss.com)** €” styling
+- **[Sanity CMS](https://sanity.io)** €” content (blog posts, experience, site settings)
+- **[Vercel](https://vercel.com)** €” deployment
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Project Structure
 
-### `yarn test`
+```
+app/
+  root.tsx           # HTML shell, global layout
+  routes.ts          # Route definitions
+  routes/
+    _layout.tsx      # Shared sidebar layout + siteSettings loader
+    home.tsx
+    about.tsx        # Work experience + skills
+    blog.tsx
+    blog.$slug.tsx   # Dynamic blog post pages
+    music.tsx
+  components/        # Shared UI components
+  lib/sanity.ts      # Sanity client
+  types/api.ts       # TypeScript types
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+studio/              # Sanity Studio (content management)
+```
 
-### `yarn build`
+## How SSG Works
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Pages are pre-rendered to static HTML at **build time**. The `react-router.config.ts` fetches all blog slugs from Sanity and generates a route list, so every page €” including dynamic blog posts €” gets its own `index.html`.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To update content on the live site, trigger a new deploy (manually or via a Sanity webhook).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Development
 
-### `yarn eject`
+```bash
+# Install dependencies
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you canâ€™t go back!**
+# Start dev server (http://localhost:5173)
+npm run dev
+```
 
-If you arenâ€™t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sanity Studio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point youâ€™re on your own.
+The CMS runs as a separate app in `studio/`:
 
-You donâ€™t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldnâ€™t feel obligated to use this feature. However we understand that this tool wouldnâ€™t be useful if you couldnâ€™t customize it when you are ready for it.
+```bash
+cd studio
+npm install
+npm run dev  # http://localhost:3333
+```
 
-## Learn More
+## Build & Deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Output goes to `build/client/` €” static files ready for any CDN or Vercel.
 
-### Code Splitting
+### Keeping content fresh with Vercel webhooks
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. In Vercel †’ Settings †’ Git †’ **Deploy Hooks** †’ create a hook URL
+2. In Sanity †’ API †’ **Webhooks** †’ paste that URL
+3. Every publish in Sanity triggers an automatic rebuild (~30s)
 
-### Analyzing the Bundle Size
+## Adding Content
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
-El portafolio quedÃ³ con una arquitectura mucho mÃ¡s limpia. Cuando quieras agregar mÃ¡s datos (proyectos, blog, etc.) solo necesitas:
-
-Crear el modelo en api/models/
-Crear el endpoint en api/
-Crear el hook en src/hooks/
-Usarlo en el componente
-Â¡Buena suerte con el deploy en Vercel! ðŸš€
+All content is managed through Sanity Studio. Schema types live in `studio/schemaTypes/`.

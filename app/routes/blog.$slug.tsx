@@ -4,7 +4,7 @@ import { sanityClient } from "../lib/sanity";
 import type { BlogPost } from "../types/api";
 import type { Route } from "./+types/blog.$slug";
 
-const blogPostQuery = `*[_type == "blogPost" && slug.current == $slug][0] {
+const blogPostQuery = `*[_type == "blogPost" && slug.current == $slug && defined(slug.current) && defined(publishedAt)][0] {
   _id, title, slug, excerpt, content, tags, publishedAt, order
 }`;
 
@@ -12,12 +12,35 @@ export async function loader({ params }: Route.LoaderArgs) {
   const post = await sanityClient.fetch<BlogPost>(blogPostQuery, {
     slug: params.slug,
   });
-  if (!post) throw new Response("Not Found", { status: 404 });
+
+  if (!post) {
+    throw new Response("Not Found", { status: 404 });
+  }
+
   return { post };
+}
+
+function getFormattedDate(dateValue?: string) {
+  if (!dateValue) {
+    return null;
+  }
+
+  const date = new Date(dateValue);
+
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
+
+  return date.toLocaleDateString("en-FI", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export default function BlogPostPage() {
   const { post } = useLoaderData<typeof loader>();
+  const publishedAt = getFormattedDate(post.publishedAt);
 
   return (
     <section className="p-4 md:p-8 w-full">
@@ -40,13 +63,9 @@ export default function BlogPostPage() {
             ))}
           </div>
           <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-          <p className="text-gray-500 text-sm italic mb-6">
-            {new Date(post.publishedAt).toLocaleDateString("en-FI", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
+          {publishedAt && (
+            <p className="text-gray-500 text-sm italic mb-6">{publishedAt}</p>
+          )}
           {post.content && (
             <div className="blog-content prose max-w-none">
               <PortableText value={post.content} />

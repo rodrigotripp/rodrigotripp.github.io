@@ -5,7 +5,7 @@ export default {
   appDirectory: "app",
   async prerender() {
     const slugs: { slug: { current: string } }[] = await sanityClient.fetch(
-      `*[_type == "blogPost"]{ slug }`
+      `*[_type == "blogPost"]{ slug }`,
     );
     return [
       "/",

@@ -49,7 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               surfaceScale="5"
               specularConstant="1"
               specularExponent="100"
-              lighting-color="white"
+              lightingColor="white"
               result="specLight"
             >
               <fePointLight x="-200" y="-200" z="300" />
@@ -72,9 +72,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             />
           </filter>
         </svg>
-        <main className="min-h-screen h-full">
-          {children}
-        </main>
+        <main className="min-h-screen h-full">{children}</main>
         <ScrollRestoration />
         <Scripts />
       </body>

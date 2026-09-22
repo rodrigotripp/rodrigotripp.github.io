@@ -11,7 +11,7 @@ export default {
 
     try {
       const slugs: { slug: { current: string } }[] = await sanityClient.fetch(
-        `*[_type == "blogPost"]{ slug }`,
+        `*[_type == "blogPost" && defined(slug.current)]{ slug }`,
       );
 
       return [...staticRoutes, ...slugs.map((p) => `/blog/${p.slug.current}`)];

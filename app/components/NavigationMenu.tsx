@@ -39,7 +39,7 @@ function NavigationMenu() {
         </GlassDiv>
       </ul>
 
-      <div>
+      {/* <div>
         <GlassDiv>
           <ul className="my-4 space-y-3">
             <li className="text-lg font-semibold">Demo Sites for fun!</li>
@@ -65,7 +65,7 @@ function NavigationMenu() {
             </li>
           </ul>
         </GlassDiv>
-      </div>
+      </div> */}
 
       <GlassDiv hover>
         <ul className="space-y-3 py-1">

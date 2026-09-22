@@ -16,7 +16,7 @@
   position: absolute;
   z-index: 0;
   inset: 0;
-  backdrop-filter: blur(0.1px);
+  backdrop-filter: blur(0.5px);
   filter: url(#glass-distortion);
   overflow: hidden;
 }
@@ -32,9 +32,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-
   overflow: hidden;
-
   box-shadow:
     inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
     inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);

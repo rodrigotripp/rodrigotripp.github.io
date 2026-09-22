@@ -9,7 +9,7 @@ export default {
   async prerender() {
     const slugs = await fetchSanityWithFallback<
       { slug: { current: string } }[]
-    >(`*[_type == "blogPost"]{ slug }`, []);
+    >(`*[_type == "blogPost" && defined(slug.current)]{ slug }`, []);
     return [
       "/",
       "/about",

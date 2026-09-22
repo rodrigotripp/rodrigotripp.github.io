@@ -1,5 +1,13 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build/client",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1/index.html" },
+    { "source": "/music", "destination": "/music/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

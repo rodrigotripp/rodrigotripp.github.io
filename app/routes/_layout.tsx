@@ -1,5 +1,5 @@
 import { Outlet, useRouteLoaderData } from "react-router";
-import { sanityClient } from "../lib/sanity";
+import { fetchSanityOrFallback } from "../lib/sanity";
 import type { SiteSettings } from "../types/api";
 import NavigationMenu from "../components/NavigationMenu";
 import { GlassDiv } from "../components/GlassDiv";
@@ -14,7 +14,10 @@ const siteSettingsQuery = `*[_type == "siteSettings"][0] {
 }`;
 
 export async function loader() {
-  const settings: SiteSettings = await sanityClient.fetch(siteSettingsQuery);
+  const settings = await fetchSanityOrFallback<SiteSettings | null>(
+    siteSettingsQuery,
+    null,
+  );
   return { settings };
 }
 

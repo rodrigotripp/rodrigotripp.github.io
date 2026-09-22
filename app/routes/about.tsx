@@ -1,4 +1,4 @@
-import { sanityClient } from "../lib/sanity";
+import { fetchSanityWithFallback } from "../lib/sanity";
 import type { Experience, SkillCategory } from "../types/api";
 import { useLoaderData } from "react-router";
 
@@ -12,8 +12,8 @@ const skillsQuery = `*[_type == "skillCategory"] | order(order asc) {
 
 export async function loader() {
   const [experiences, skillCategories] = await Promise.all([
-    sanityClient.fetch<Experience[]>(experienceQuery),
-    sanityClient.fetch<SkillCategory[]>(skillsQuery),
+    fetchSanityWithFallback<Experience[]>(experienceQuery, []),
+    fetchSanityWithFallback<SkillCategory[]>(skillsQuery, []),
   ]);
   return { experiences, skillCategories };
 }

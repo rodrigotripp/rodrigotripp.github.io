@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router";
-import { sanityClient } from "../lib/sanity";
+import { fetchSanityWithFallback } from "../lib/sanity";
 import type { BlogPost } from "../types/api";
 
 const blogListQuery = `*[_type == "blogPost" && defined(slug.current) && defined(publishedAt)] | order(order desc) {
@@ -7,7 +7,7 @@ const blogListQuery = `*[_type == "blogPost" && defined(slug.current) && defined
 }`;
 
 export async function loader() {
-  const posts = await sanityClient.fetch<BlogPost[]>(blogListQuery);
+  const posts = await fetchSanityWithFallback<BlogPost[]>(blogListQuery, []);
   return { posts };
 }
 

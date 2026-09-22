@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router";
 import { PortableText } from "@portabletext/react";
-import { fetchSanityWithFallback } from "../lib/sanity";
+import { sanityClient } from "../lib/sanity";
 import type { BlogPost } from "../types/api";
 import type { Route } from "./+types/blog.$slug";
 
@@ -9,13 +9,9 @@ const blogPostQuery = `*[_type == "blogPost" && slug.current == $slug && defined
 }`;
 
 export async function loader({ params }: Route.LoaderArgs) {
-  const post = await fetchSanityWithFallback<BlogPost | null>(
-    blogPostQuery,
-    null,
-    {
-      slug: params.slug,
-    },
-  );
+  const post = await sanityClient.fetch<BlogPost>(blogPostQuery, {
+    slug: params.slug,
+  });
 
   if (!post) {
     throw new Response("Not Found", { status: 404 });

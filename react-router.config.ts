@@ -7,15 +7,16 @@ export default {
     mode: "initial",
   },
   async prerender() {
-    const slugs: { slug: { current: string } }[] = await sanityClient.fetch(
-      `*[_type == "blogPost"]{ slug }`,
-    );
-    return [
-      "/",
-      "/about",
-      "/blog",
-      "/music",
-      ...slugs.map((p) => `/blog/${p.slug.current}`),
-    ];
+    const staticRoutes = ["/", "/about", "/blog", "/music"];
+
+    try {
+      const slugs: { slug: { current: string } }[] = await sanityClient.fetch(
+        `*[_type == "blogPost"]{ slug }`,
+      );
+
+      return [...staticRoutes, ...slugs.map((p) => `/blog/${p.slug.current}`)];
+    } catch {
+      return staticRoutes;
+    }
   },
 } satisfies Config;

@@ -1,7 +1,7 @@
 import { SocialIcon } from "react-social-icons";
 import { Link, useLocation } from "react-router";
 import { GlassDiv } from "./GlassDiv";
-import { useSidebarData } from "../routes/_layout";
+import { useSidebarData } from "../features/profile";
 
 const DEFAULT_SOCIAL = {
   github: "https://github.com/rodrigotripp",
@@ -38,34 +38,6 @@ function NavigationMenu() {
           </li>
         </GlassDiv>
       </ul>
-
-      {/* <div>
-        <GlassDiv>
-          <ul className="my-4 space-y-3">
-            <li className="text-lg font-semibold">Demo Sites for fun!</li>
-            <li>
-              <Link
-                to="https://rodrigotripp.vercel.app/meals"
-                className="underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Meals with Next.js
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="https://meals-vite-vue.vercel.app/"
-                className="underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Meals with Vue + Vite
-              </Link>
-            </li>
-          </ul>
-        </GlassDiv>
-      </div> */}
 
       <GlassDiv hover>
         <ul className="space-y-3 py-1">

@@ -6,10 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import type { Route } from "./+types/root";
 import "./index.css";
 
-export const links: Route.LinksFunction = () => [];
+export const links = () => [];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -84,7 +83,7 @@ export default function App() {
   return <Outlet />;
 }
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+export function ErrorBoundary({ error }: { error: unknown }) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
 

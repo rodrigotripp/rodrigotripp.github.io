@@ -20,9 +20,15 @@ yarn-debug.log*
 yarn-error.log*
 
 /build
-build
+/build/**
+/.react-router
+/.react-router/**
+app/+types
+app/+types/**
 .vercel
-tsconfig.tsbuildinfo
 *.tsbuildinfo
+/.vite
+/.vite/**
+tsconfig.tsbuildinfo
 .env*.local
 .env

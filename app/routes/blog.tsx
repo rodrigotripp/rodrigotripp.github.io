@@ -1,32 +1,10 @@
 import { Link, useLoaderData } from "react-router";
-import { fetchSanityOrFallback } from "../lib/sanity";
-import type { BlogPost } from "../types/api";
-
-const blogListQuery = `*[_type == "blogPost" && defined(slug.current) && defined(publishedAt)] | order(order desc) {
-  _id, title, slug, excerpt, tags, publishedAt, order
-}`;
+import { loadBlogList } from "../features/blog/data";
+import { getFormattedDate } from "../lib/date";
 
 export async function loader() {
-  const posts = await fetchSanityOrFallback<BlogPost[]>(blogListQuery, []);
+  const posts = await loadBlogList();
   return { posts };
-}
-
-function getFormattedDate(dateValue?: string) {
-  if (!dateValue) {
-    return null;
-  }
-
-  const date = new Date(dateValue);
-
-  if (Number.isNaN(date.getTime())) {
-    return null;
-  }
-
-  return date.toLocaleDateString("en-FI", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export default function Blog() {

@@ -10,10 +10,23 @@ export const sanityClient = createClient({
 export async function fetchSanityOrFallback<T>(
   query: string,
   fallback: T,
-  params?: Record<string, string | undefined>,
+  params?: Record<string, string | number | boolean | undefined>,
 ) {
+  const sanitizedParams = params
+    ? Object.fromEntries(
+        Object.entries(params).filter(([, value]) => value !== undefined),
+      )
+    : undefined;
+
   try {
-    return await sanityClient.fetch<T>(query, params);
+    if (!sanitizedParams) {
+      return await sanityClient.fetch<T>(query);
+    }
+
+    return await sanityClient.fetch<T>(
+      query,
+      sanitizedParams as Record<string, string | number | boolean>,
+    );
   } catch {
     return fallback;
   }

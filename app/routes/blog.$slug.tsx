@@ -1,41 +1,16 @@
-import { Link, useLoaderData } from "react-router";
+import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { PortableText } from "@portabletext/react";
-import { sanityClient } from "../lib/sanity";
-import type { BlogPost } from "../types/api";
-import type { Route } from "./+types/blog.$slug";
+import { loadBlogPost } from "../features/blog/post";
+import { getFormattedDate } from "../lib/date";
 
-const blogPostQuery = `*[_type == "blogPost" && slug.current == $slug && defined(slug.current) && defined(publishedAt)][0] {
-  _id, title, slug, excerpt, content, tags, publishedAt, order
-}`;
-
-export async function loader({ params }: Route.LoaderArgs) {
-  const post = await sanityClient.fetch<BlogPost>(blogPostQuery, {
-    slug: params.slug,
-  });
+export async function loader({ params }: LoaderFunctionArgs) {
+  const post = await loadBlogPost(params.slug);
 
   if (!post) {
     throw new Response("Not Found", { status: 404 });
   }
 
   return { post };
-}
-
-function getFormattedDate(dateValue?: string) {
-  if (!dateValue) {
-    return null;
-  }
-
-  const date = new Date(dateValue);
-
-  if (Number.isNaN(date.getTime())) {
-    return null;
-  }
-
-  return date.toLocaleDateString("en-FI", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export default function BlogPostPage() {
